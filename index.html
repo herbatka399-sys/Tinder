@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mój Tinder</title>
+<style>
+body{margin:0;background:#f0f2f5;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:sans-serif}
+h1{color:#fe3c72;margin-bottom:20px}
+.card{width:340px;height:520px;background:white;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.15);overflow:hidden;position:relative}
+.card img{width:100%;height:75%;object-fit:cover}
+.info{padding:16px}
+.info h2{margin:0 0 4px 0}
+.info p{margin:0;color:#666}
+.buttons{margin-top:25px;display:flex;gap:30px}
+.btn{width:65px;height:65px;border-radius:50%;border:3px solid;font-size:26px;background:white;cursor:pointer}
+.nope{color:#ff4458;border-color:#ff4458}
+.like{color:#2dd36f;border-color:#2dd36f}
+</style>
+</head>
+<body>
+
+<h1>Mój Tinder 🔥</h1>
+
+<div class="card" id="card">
+  <img id="photo" src="">
+  <div class="info">
+    <h2>Waldemar Mazurek, 49</h2>
+    <p>Karate i samochody marki BMW</p>
+  </div>
+</div>
+
+<div class="buttons">
+  <button class="btn nope" onclick="next()">✕</button>
+  <button class="btn like" onclick="next()">♥</button>
+</div>
+
+<script>
+var photos = [
+  "orca-image--1220504967.jpeg.jpeg",
+  "orca-image-1046788928.jpeg.jpeg",
+  "orca-image--441459825.jpeg.jpeg",
+  "orca-image-911238091.jpeg.jpeg",
+  "orca-image-951352849.jpeg.jpeg",
+  "orca-image-1923733281.jpeg.jpeg",
+  "orca-image--1483105232.jpeg.jpeg",
+  "orca-image-883240692.jpeg.jpeg",
+  "orca-image--1803540496.jpeg.jpeg",
+  "orca-image--950828909.jpeg.jpeg",
+  "orca-image--2078740239.jpeg.jpeg",
+  "orca-image-2025152550.jpeg.jpeg",
+  "orca-image--1027457079.jpeg.jpeg",
+  "orca-image--113872463.jpeg.jpeg",
+  "orca-image--1572057243.jpeg.jpeg",
+  "orca-image-5185934.jpeg.jpeg",
+  "orca-image-630356524.jpeg.jpeg",
+  "orca-image--1701457680.jpeg.jpeg"
+];
+
+var i = 0;
+var photo = document.getElementById("photo");
+
+function next() {
+  i++;
+  if (i >= photos.length) i = 0;
+  photo.src = photos[i];
+}
+
+photo.src = photos[0];
+</script>
+
+</body>
+</html>
